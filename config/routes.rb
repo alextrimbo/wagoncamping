@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
-  get 'campings/index'
-
-  get 'campings/show'
-
-  get 'campings/new'
-
-  get 'campings/create'
-
-  get 'campings/update'
-
-  get 'campings/edit'
-
-  get 'campings/destroy'
+ resources :campings
 
   get 'users/index'
 
