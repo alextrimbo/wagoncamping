@@ -1,2 +1,9 @@
-<h1>Campings#edit</h1>
-<p>Find me in app/views/campings/edit.html.erb</p>
+<%= simple_form_for(@camping) do |f| %>
+  <%= f.input :camping_name, placeholder: "Your camping name" %>
+  <%= f.input :description, placeholder: "Describe your camping" %>
+  <%= f.input :rules, placeholder: "Say your rules" %>
+  <%= f.input :pricing, placeholder: "R$ 1000" %>
+  <%= f.input :direction, placeholder: "Where are you!?" %>
+
+  <%= f.submit "Edit this camping",  class: "btn btn-primary" %>
+<% end %>

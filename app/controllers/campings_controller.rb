@@ -15,7 +15,6 @@ class CampingsController < ApplicationController
 
   def create
     @camping = current_user.campings.new(camping_params)
-
     if @camping.save
       redirect_to camping_path(@camping)
     else
@@ -26,7 +25,16 @@ class CampingsController < ApplicationController
   def update
   end
 
+
   def edit
+   current_user.id == @camping.user.id
+  end
+
+  def update
+    @camping.update(camping_params)
+
+    redirect_to camping_path(@camping), notice: "Updated..."
+
   end
 
   def destroy
