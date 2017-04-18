@@ -1,16 +1,23 @@
-<h1>All our campings</h1>
+<div class="wrapper">
+  <div class="container-small">
 
-<% @campings.each do |camping| %>
-  <br>
-  <%= camping.camping_name %>
-  <br>
-  <%= camping.description %>
-  <br>
-  <%= camping.rules %>
-  <br>
-  <%= camping.direction %>
-  <br>
-  <%= camping.pricing %>
-  <br>
 
-<% end %>
+
+  <h1>All our campings</h1>
+
+  <% @campings.each do |camping| %>
+    <br>
+    <%= camping.camping_name %>
+    <br>
+    <%= camping.description %>
+    <br>
+    <%= camping.rules %>
+    <br>
+    <%= camping.direction %>
+    <br>
+    <%= camping.pricing %>
+    <br>
+
+  <% end %>
+  </div>
+</div>

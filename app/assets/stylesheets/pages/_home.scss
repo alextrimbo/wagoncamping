@@ -3,6 +3,7 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 .banner {
+  display: flex;
   color: white;
   text-align: center;
   height: 100vh;
@@ -23,4 +24,8 @@
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
+}
+
+.container-small {
+  width: 700px;
 }
