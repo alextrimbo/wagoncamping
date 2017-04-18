@@ -1,36 +1,26 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
-
-  get 'bookings/create'
-
-  get 'bookings/update'
-
-  get 'bookings/edit'
-
-  get 'bookings/destroy'
-
-  get 'bookings/show'
-
-  get 'bookings/index'
-
- resources :campings
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/edit'
-
-  get 'users/destroy'
+ # resources :bookings
+ # resources :campings
+ # resources :users
+  root to: 'pages#home'
+  resources :users
 
   devise_for :users,
    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+ resources :my_campings
+
+ resources :campings do
+   resources :bookings, only: [ :show, :create, :index, :new ]
+ end
+
+ resources :my_bookings, only: [ :show, :index, :destroy ]
+
+ resources :received_bookings, only: [ :show, :index ] do
+   member do
+     patch :accept
+     patch :decline
+   end
+ end
 end
+
