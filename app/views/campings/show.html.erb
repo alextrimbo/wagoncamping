@@ -1,2 +1,21 @@
-<h1>Campings#show</h1>
-<p>Find me in app/views/campings/show.html.erb</p>
+<div class="wrapper">
+  <div class="containter">
+    <div class="col-sm-offset-4 col-sm-4">
+      <h1>Here are your new camping details!</h1>
+
+        <%= @camping.camping_name %>
+        <br>
+        <%= @camping.description %>
+        <br>
+        <%= @camping.rules %>
+        <br>
+        <%= @camping.direction %>
+        <br>
+        <%= @camping.pricing %>
+        <br>
+
+        <%= link_to t(".top_call_to_action", default: "Back to your profil!"), users_index_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+         <%= link_to t(".top_call_to_action", default: "Edit your camping"), edit_camping_path(@camping), class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+  </div>
+</div>

@@ -14,15 +14,28 @@ class CampingsController < ApplicationController
   end
 
   def create
-    @camping = Camping.new(camping_params)
-    @camping.save
-    redirect_to campings_path(@camping)
+    @camping = current_user.campings.new(camping_params)
+    if @camping.save
+      redirect_to camping_path(@camping)
+    else
+      render 'new'
+    end
+
   end
 
   def update
   end
 
+
   def edit
+   current_user.id == @camping.user.id
+  end
+
+  def update
+    @camping.update(camping_params)
+
+    redirect_to camping_path(@camping), notice: "Updated..."
+
   end
 
   def destroy

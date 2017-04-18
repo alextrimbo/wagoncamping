@@ -1,4 +1,16 @@
-<h1>Campings#index</h1>
-<p>Find me in app/views/campings/index.html.erb</p>
+<h1>All our campings</h1>
 
-<%= Camping.all %>
+<% @campings.each do |camping| %>
+  <br>
+  <%= camping.camping_name %>
+  <br>
+  <%= camping.description %>
+  <br>
+  <%= camping.rules %>
+  <br>
+  <%= camping.direction %>
+  <br>
+  <%= camping.pricing %>
+  <br>
+
+<% end %>
