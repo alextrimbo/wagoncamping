@@ -1,5 +1,5 @@
 class CampingsController < ApplicationController
-  before_action :set_camping, only:[:show, :edit, :update]
+  before_action :set_camping, only:[:show, :edit, :update, :destroy]
 
 
   def index
@@ -34,11 +34,12 @@ class CampingsController < ApplicationController
     @camping.update(camping_params)
 
     redirect_to camping_path(@camping), notice: "Updated..."
-
   end
 
   def destroy
+
   end
+
 
   private
 
