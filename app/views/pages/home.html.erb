@@ -6,3 +6,26 @@
   </div>
 </div>
 
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+      <% Camping.all.each do |camping| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-category"><%= camping.camping_name %></div>
+        <div class="card-description">
+          <h2><%= camping.description %></h2>
+          <p><%= camping.pricing %></p>
+          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
+        </div>
+        <img class="card-user avatar" src="user.jpg">
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
