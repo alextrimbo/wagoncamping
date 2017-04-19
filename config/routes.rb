@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'my_bookings/show'
+
+  get 'my_bookings/index'
+
+  get 'my_bookings/destroy'
+
  # resources :bookings
  # resources :campings
  # resources :users
