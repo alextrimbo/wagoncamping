@@ -1,0 +1,60 @@
+.listcard {
+  height: 175px;
+  width: 640px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FAFBFC;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.07)), url(background.jpg);
+
+
+}
+.listcard-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+#listcard-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.listcard-category {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.listcard-description {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+.listcard-description h2 {
+  font-size: 18px;
+}
+.listcard-description p {
+  font-size: 13px;
+  }
+.listcard-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.listcard-link:hover{
+  opacity: 0.1;
+}

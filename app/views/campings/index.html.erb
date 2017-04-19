@@ -4,18 +4,20 @@
       <h1>Check out our barracas!</h1>
       <br>
         <% Camping.all.each do |camping| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-          <div class="card-category"><%= camping.camping_name %></div>
-          <div class="card-description">
+      <div class="col-xs-12">
+        <div class="listcard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+          <div class="listcard-category"><%= camping.camping_name %></div>
+          <div class="listcard-description">
             <h2><%= camping.description %></h2>
-            <p><%= camping.pricing %></p>
+            <p><%= camping.pricing %> R$</p>
             <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
           </div>
-          <img class="card-user avatar" src="user.jpg">
+          <div class="listcard-btn">
+
+          </div>
         </div>
       </div>
-        <% end %>
+       <% end %>
     </div>
   </div>
 </div>
