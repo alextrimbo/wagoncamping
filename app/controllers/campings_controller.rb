@@ -16,7 +16,7 @@ class CampingsController < ApplicationController
   def create
     @camping = current_user.campings.new(camping_params)
     if @camping.save
-      redirect_to users_path
+      redirect_to my_campings_path
     else
       render 'new'
     end

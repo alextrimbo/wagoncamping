@@ -3,7 +3,6 @@ Rails.application.routes.draw do
  # resources :campings
  # resources :users
   root to: 'pages#home'
-  resources :users
 
   devise_for :users,
    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
