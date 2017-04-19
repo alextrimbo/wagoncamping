@@ -1,12 +1,18 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_camping, only: [:new, :create]
 
   def new
-
+    @booking = @camping.bookings.new
   end
 
   def create
-
+    @booking = @camping.bookings.new(booking_params)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -26,8 +32,12 @@ class BookingsController < ApplicationController
 
   private
 
+  def set_camping
+    @camping = Camping.find(params[:camping_id])
+  end
+
   def booking_params
-      params.require(:reservation).permit(:start_date, :end_date, :price, :total, :room_id)
+      params.require(:booking).permit(:start_date, :end_date, :price, :camping_id, :user_id)
   end
 
 end
