@@ -1,9 +1,11 @@
 <%= simple_form_for(@camping) do |f| %>
   <%= f.input :camping_name, placeholder: "Your camping name" %>
   <%= f.input :description, placeholder: "Describe your camping" %>
-  <%= f.input :rules, placeholder: "Say your rules" %>
-  <%= f.input :pricing, placeholder: "R$ 1000" %>
   <%= f.input :direction, placeholder: "Where are you!?" %>
+  <%= f.input :pricing, placeholder: "R$ 100" %>
+  <%= f.input :rules, placeholder: "Any specific rules?" %>
+
+
 
   <%= f.submit "Add a camping", class: "btn btn-primary" %>
 <% end %>

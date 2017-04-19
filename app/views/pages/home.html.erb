@@ -1,8 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.15) 0%, rgba(0, 36, 61, 0.08) 50%), url('<%= root_url %>banner.jpeg');">
   <div class="banner-content">
     <h1>Take a breath</h1>
-    <p>Descubra mais de 3000 campings unicos</p>
-    <%= link_to 'Vai safadao', campings_path, class: "btn btn-danger" %>
+    <p>Descubra mais de 1000 barracas únicas</p>
+    <%= link_to 'Vai safadao', campings_path, class: "btn btn-success" %>
 
   </div>
 </div>
@@ -20,10 +20,8 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
         <div class="card-category"><%= camping.camping_name %></div>
         <div class="card-description">
-          <h2><%= camping.description %></h2>
-          <p><%= camping.pricing %></p>
-          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
-        </div>
+        <h2><%= camping.description %></h2> </div>
+        <%= link_to "Book it!", new_camping_booking_path(camping.id), class: "btn btn-success", id: "card-btn" %>
         <img class="card-user avatar" src="user.jpg">
       </div>
     </div>
