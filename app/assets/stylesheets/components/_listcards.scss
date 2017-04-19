@@ -16,7 +16,8 @@
   color: #888888;
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  align-items: center;
+
 }
   // background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.07)), url(background.jpg);
 
@@ -24,38 +25,31 @@
 
 
 .listcard-photo {
-  width: 160px;
-  height: 94px;
+  width: 170px;
+  height: 100px;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-left: 12px;
 }
 
 
-#listcard-btn {
-  // position: absolute;
-  bottom: 10px;
-  right: 10px;
+.listcard-btn {
+  margin-bottom: 126px;
+  margin-right: 6px;
 }
 
 .listcard-category {
   font-size: 18px;
   text-transform: uppercase;
+  text-align: start;
+  margin-left: -100px;
+
 }
 
 .listcard-category h2 {
   font-size: 14px;
 }
 
-
-
-
-.listcard-description h2 {
-  font-size: 18px;
-}
-
-.listcard-description p {
-  font-size: 13px;
-  }
 .listcard-link {
   position: absolute;
   top: 0;

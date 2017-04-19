@@ -13,7 +13,7 @@
         <div class="card-description">
           <h2><%= camping.description %></h2>
           <p><%= camping.pricing %></p>
-          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
+          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-btn" %>
         </div>
         <img class="card-user avatar" src="user.jpg">
       </div>
