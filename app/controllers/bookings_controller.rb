@@ -8,8 +8,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = @camping.bookings.new(booking_params)
+    @booking.price = @camping.pricing
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to my_booking_path(@booking)
     else
       render 'new'
     end
@@ -37,7 +38,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-      params.require(:booking).permit(:start_date, :end_date, :price, :camping_id, :user_id)
+      params.require(:booking).permit(:start_date, :end_date, :camping_id, :user_id)
   end
 
 end

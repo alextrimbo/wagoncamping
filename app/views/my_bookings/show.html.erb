@@ -1,2 +1,14 @@
-<h1>MyBookings#show</h1>
-<p>Find me in app/views/my_bookings/show.html.erb</p>
+<h1>Cogratulations camper! Your booking details:</h1>
+<div class="wrapper">
+  <div class="containter">
+    <div class="col-sm-offset-4 col-sm-4">
+
+        <p> Check-in: </p><%= @booking.start_date %><p> Check-out: </p><%= @booking.end_date %>
+        <br>
+        <br>
+        <%= link_to t(".top_call_to_action", default: "Back 2 Barracas!"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+        <%= link_to t(".top_call_to_action", default: "Edit your camping"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+    </div>
+  </div>
+</div>

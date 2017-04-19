@@ -1,2 +1,23 @@
-<h1>MyBookings#index</h1>
-<p>Find me in app/views/my_bookings/index.html.erb</p>
+
+<h1>This is your dashbord</h1>
+
+<h2>Your Bookings</h2>
+
+
+<div class="container">
+  <div class="row">
+      <% current_user.bookings.all.each do |booking| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-category"><%= booking.camping_name %></div>
+        <div class="card-description">
+          <h2><%= camping.description %></h2>
+          <p><%= camping.pricing %></p>
+          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
+        </div>
+        <img class="card-user avatar" src="user.jpg">
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
