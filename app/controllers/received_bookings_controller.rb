@@ -6,4 +6,11 @@ class ReceivedBookingsController < ApplicationController
   def show
     @received_booking = current_user.received_bookings.find(params[:id])
   end
+
+  def accept
+  end
+
+  def decline
+  end
+
 end
