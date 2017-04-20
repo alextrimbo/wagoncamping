@@ -1,38 +1,29 @@
 <div class="wrapper">
   <div class="containter">
-    <div class="col-sm-offset-4 col-sm-4">
+    <div class="col-sm-12 col-sm-12">
       <h1>Here are your new camping details!</h1>
 
 
-      <% if @camping.photo? %>
-  <%= cl_image_tag @camping.photo.path, width: 200, height: 300, crop: :fill %>
 
 
-        <%= @camping.camping_name %>
-        <br>
-        <%= @camping.description %>
-        <br>
-        <%= @camping.rules %>
-        <br>
-        <%= @camping.direction %>
-        <br>
-        <%= @camping.pricing %>
-        <br>
-
-        <%= link_to t(".top_call_to_action", default: "Back 2 Barracas!"), campings_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-        <%= link_to t(".top_call_to_action", default: "Edit your camping"), edit_my_camping_path(@camping), class: "navbar-wagon-item navbar-wagon-button btn" %>
-
-      <% else %>
-       <%= cl_image_tag("http://res.cloudinary.com/dhxul1cxy/image/upload/v1492697968/dgkfxmawwbwzdosvgtm2.jpg",
-width: 400, height: 300, crop: :fill) %>
-
-<% end %>
+          <div class="listcard">
+            <div class="listcard-photo-and-descritpion">
 
 
+              <div class="listcard-category"><%= @camping.camping_name %>
+                <h2><%= @camping.description %></h2>
+                <h2> <%= @camping.direction %> </h2>
+                <h2> <%= @camping.pricing %> </h2>
+                <h2> <%= @camping.rules %> </h2>
 
+              </div>
+            </div>
 
+              <div class="listcard-btn">
+                <%= link_to t(".top_call_to_action", default: "Edit"), new_camping_booking_path(@camping.id), class: "btn btn-success", id: "listcard-two-btn" %>
+              </div>
 
+        </div>
 
-    </div>
   </div>
 </div>

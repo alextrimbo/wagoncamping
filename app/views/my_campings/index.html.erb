@@ -31,6 +31,27 @@
       </div>
     <% end %>
 
+<div class="index-listing">
+
+            <% @received_bookings.each do |received_booking| %>
+              <div class="listcard">
+                <div class="listcard-photo-and-descritpion">
+                <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          </div>
+
+                  <div class="listcard-category"><%= received_booking.user_id %>
+                    <h2><%= received_booking.start_date %></h2>
+                    <h2><%= received_booking.end_date %></h2>
+                    <p> R$<%= received_booking.price %></p>
+
+                  </div>
+                </div>
+
+
+          </div>
+        <% end %>
+
+
     <h2>Your Campings</h2>
 
 
