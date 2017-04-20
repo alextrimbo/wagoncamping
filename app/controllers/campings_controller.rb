@@ -4,12 +4,6 @@ class CampingsController < ApplicationController
 
   def index
     @campings = Camping.where.not(latitude: nil, longitude: nil)
-
-    @hash = Gmaps4rails.build_markers(@campings) do |camping, marker|
-      marker.lat camping.latitude
-      marker.lng camping.longitude
-      # marker.infowindow render_to_string(partial: "/campings/map_box", locals: { camping: camping })
-    end
   end
 
   def show
