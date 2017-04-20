@@ -25,30 +25,47 @@
 
 
 .listcard-photo {
-  width: 170px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 12px;
   background-size: 100% 100%;
 }
 
+.listcard-photo-and-descritpion {
+    display: flex;
+    flex-direction: row;
+}
 
 .listcard-btn {
   margin-bottom: 126px;
   margin-right: 6px;
 }
 
+.listcard-two-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  align-items: flex-end;
+}
+
+.listcard-two-btn-detele {
+  padding-bottom: 5px;
+}
+
 .listcard-category {
   font-size: 18px;
-  text-transform: uppercase;
   text-align: start;
-  margin-left: -100px;
-
+  position: relative;
+  left: 20px;
 }
 
 .listcard-category h2 {
   font-size: 14px;
+  margin-top: 10px;
 }
 
 .listcard-link {
