@@ -43,7 +43,12 @@ class CampingsController < ApplicationController
   end
 
   def destroy
+    camping = Camping.find(params[:id])
+    camping_name = camping.camping_name
 
+    camping.destroy
+
+    redirect_to my_campings_path, notice: "#{camping_name} was destroyed."
   end
 
 

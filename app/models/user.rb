@@ -6,7 +6,7 @@ class User < ApplicationRecord
         :omniauthable, omniauth_providers: [:facebook]
 
 
-  has_many :campings
+  has_many :campings, dependent: :destroy
   has_many :my_bookings, class_name: "Booking"
   has_many :received_bookings, through: :campings, source: "bookings"
 
