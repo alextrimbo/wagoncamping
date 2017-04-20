@@ -4,14 +4,33 @@
 
     <h1>This is your dashbord</h1>
 
+
+
     <h2>Bookings Pending</h2>
 
+    <% @received_bookings.each do |received_booking| %>
+      <div class="col-xs-12">
+        <div class="listcard">
 
-    <h2>Your campings</h2>
+          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          </div>
+
+            <div class="listcard-category"><%= received_booking.user_id %>
 
 
+              <h2><%= received_booking.start_date %></h2>
+              <h2><%= received_booking.end_date %></h2>
+              <p> R$<%= received_booking.price %></p>
+            </div>
 
- <% current_user.campings.all.each do |camping| %>
+        </div>
+      </div>
+    <% end %>
+    <br>
+
+    <h2>Your Campings</h2>
+
+    <% current_user.campings.each do |camping| %>
       <div class="col-xs-12">
         <div class="listcard">
 
@@ -22,21 +41,19 @@
 
 
               <h2><%= camping.description %></h2>
-              <p><%= camping.pricing %> R$</p>
+              <p>R$<%= camping.pricing %> </p>
             </div>
 
             <div class="listcard-btn">
-              <%= link_to t(".top_call_to_action", default: "Check bookings"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-btn" %>
+              <%= link_to t(".top_call_to_action", default: "Book It"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-btn" %>
+            </div>
+            <div class="listcard-btn">
+              <%= link_to t(".top_call_to_action", default: "Destroy It"), camping_path(camping.id), method: :delete, class: "btn btn-success", id: "listcard-btn" %>
             </div>
         </div>
       </div>
        <% end %>
-      </div>
-
-
-
-
-
+    <br>
 
     <h2>Your upcoming bookings</h2>
 

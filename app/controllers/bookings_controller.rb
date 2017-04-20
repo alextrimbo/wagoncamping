@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_camping, only: [:new, :create]
 
+
   def new
     @booking = @camping.bookings.new
   end
@@ -11,6 +12,7 @@ class BookingsController < ApplicationController
     @booking.name = @camping.camping_name
     @booking.price = @camping.pricing
     if @booking.save
+      @booking.status = "Pending"
       redirect_to my_booking_path(@booking)
     else
       render 'new'
