@@ -43,6 +43,19 @@
   margin-right: 6px;
 }
 
+.listcard-two-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  align-items: flex-end;
+}
+
+.listcard-two-btn-detele {
+  padding-bottom: 5px;
+}
+
 .listcard-category {
   font-size: 18px;
   text-align: start;
