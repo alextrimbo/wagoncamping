@@ -3,6 +3,11 @@
     <div class="col-sm-offset-4 col-sm-4">
       <h1>Here are your new camping details!</h1>
 
+
+      <% if @camping.photo? %>
+  <%= cl_image_tag @camping.photo.path, width: 200, height: 300, crop: :fill %>
+
+
         <%= @camping.camping_name %>
         <br>
         <%= @camping.description %>
@@ -16,6 +21,16 @@
 
         <%= link_to t(".top_call_to_action", default: "Back 2 Barracas!"), campings_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         <%= link_to t(".top_call_to_action", default: "Edit your camping"), edit_my_camping_path(@camping), class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+      <% else %>
+       <%= cl_image_tag("http://res.cloudinary.com/dhxul1cxy/image/upload/v1492697968/dgkfxmawwbwzdosvgtm2.jpg",
+width: 400, height: 300, crop: :fill) %>
+
+<% end %>
+
+
+
+
 
 
     </div>
