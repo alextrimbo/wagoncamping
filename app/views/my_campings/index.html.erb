@@ -1,28 +1,42 @@
-
-<h1>This is your dashbord</h1>
-
-<h2>Your campings</h2>
+<div class="wrapper">
+  <div class="container">
 
 
-<div class="container">
-  <div class="row">
-      <% current_user.campings.all.each do |camping| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-        <div class="card-category"><%= camping.camping_name %></div>
-        <div class="card-description">
-          <h2><%= camping.description %></h2>
-          <p><%= camping.pricing %></p>
-          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-btn" %>
+    <h1>This is your dashbord</h1>
+
+    <h2>Your campings</h2>
+
+
+
+ <% current_user.campings.all.each do |camping| %>
+      <div class="col-xs-12">
+        <div class="listcard">
+
+          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          </div>
+
+            <div class="listcard-category"><%= camping.camping_name %>
+
+
+              <h2><%= camping.description %></h2>
+              <p><%= camping.pricing %> R$</p>
+            </div>
+
+            <div class="listcard-btn">
+              <%= link_to t(".top_call_to_action", default: "Check bookings"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-btn" %>
+            </div>
         </div>
-        <img class="card-user avatar" src="user.jpg">
       </div>
-    </div>
-      <% end %>
+       <% end %>
+      </div>
+
+
+
+
+
+
+    <h2>Your upcoming bookings</h2>
+
+
   </div>
 </div>
-
-
-
-
-<h2>Your upcoming bookings</h2>
