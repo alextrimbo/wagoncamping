@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'my_bookings/show'
 
-  get 'my_bookings/index'
+  get 'received_bookings/index'
 
-  get 'my_bookings/destroy'
+  get 'received_bookings/show'
 
- # resources :bookings
- # resources :campings
- # resources :users
   root to: 'pages#home'
 
   devise_for :users,

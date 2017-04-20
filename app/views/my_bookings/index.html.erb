@@ -6,18 +6,29 @@
 
 <div class="container">
   <div class="row">
-      <% current_user.bookings.all.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-        <div class="card-category"><%= booking.camping_name %></div>
-        <div class="card-description">
-          <h2><%= camping.description %></h2>
-          <p><%= camping.pricing %></p>
-          <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
+    <% current_user.booking.all.each do |booking| %>
+    <div class="col-sm-offset-4 col-sm-4">
+        <%= booking.name %>
+
+      <div class="col-xs-12">
+        <div class="listcard">
+
+          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          </div>
+
+            <div class="listcard-category"><%= booking.name %>
+              </div>
+
         </div>
-        <img class="card-user avatar" src="user.jpg">
       </div>
+      <p> Price: $<%= @booking.price %></p>
+       <p> Check-in: <%= @booking.start_date %></p><p> Check-out: <%= @booking.end_date %></p>
+        <br>
+        <br>
+        <%= link_to t(".top_call_to_action", default: "Back 2 Barracas!"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+        <%= link_to t(".top_call_to_action", default: "Edit your camping"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+
     </div>
-      <% end %>
+    <% end %>
   </div>
 </div>

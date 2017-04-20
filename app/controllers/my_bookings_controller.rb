@@ -4,6 +4,7 @@ class MyBookingsController < ApplicationController
   end
 
   def index
+    @bookings = Booking.all
   end
 
   def destroy

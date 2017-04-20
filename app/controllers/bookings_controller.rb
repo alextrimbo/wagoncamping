@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = @camping.bookings.new(booking_params)
+    @booking.name = @camping.camping_name
     @booking.price = @camping.pricing
     if @booking.save
       redirect_to my_booking_path(@booking)

@@ -2,12 +2,25 @@
 <div class="wrapper">
   <div class="containter">
     <div class="col-sm-offset-4 col-sm-4">
+        <%= @booking.name %>
 
-        <p> Check-in: </p><%= @booking.start_date %><p> Check-out: </p><%= @booking.end_date %>
+      <div class="col-xs-12">
+        <div class="listcard">
+
+          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          </div>
+
+            <div class="listcard-category"><%= @booking.name %>
+              </div>
+
+        </div>
+      </div>
+      <p> Price: $<%= @booking.price %></p>
+       <p> Check-in: <%= @booking.start_date %></p><p> Check-out: <%= @booking.end_date %></p>
         <br>
         <br>
         <%= link_to t(".top_call_to_action", default: "Back 2 Barracas!"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-        <%= link_to t(".top_call_to_action", default: "Edit your camping"), root_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+        <%= link_to t(".top_call_to_action", default: "All your bookings"), my_bookings_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
     </div>
   </div>
