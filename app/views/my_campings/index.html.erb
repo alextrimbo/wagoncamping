@@ -25,8 +25,11 @@
 
         </div>
       </div>
+      <div class="listcard-btn">
+        <%= link_to t(".top_call_to_action", default: "Accept"), accept_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn" %>
+        <%= link_to t(".top_call_to_action", default: "Decline"), decline_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn" %>
+      </div>
     <% end %>
-    <br>
 
     <h2>Your Campings</h2>
 
