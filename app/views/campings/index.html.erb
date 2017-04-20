@@ -6,9 +6,8 @@
         <% Camping.all.each do |camping| %>
       <div class="col-xs-12">
         <div class="listcard">
-
-          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
-          </div>
+            <div class="listcard-photo" style="<%= background_image(camping.photo, "camping_logo.png") %>">
+            </div>
 
             <div class="listcard-category"><%= camping.camping_name %>
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
+  get 'my_bookings/show'
 
   get 'received_bookings/index'
 
