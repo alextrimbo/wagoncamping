@@ -12,6 +12,10 @@ gem 'omniauth-facebook'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
