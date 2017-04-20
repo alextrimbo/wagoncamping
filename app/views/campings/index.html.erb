@@ -15,20 +15,21 @@
 
               <h2><%= camping.description %></h2>
               <p><%= camping.pricing %> R$</p>
-              </div>
+            </div>
 
             <div class="listcard-btn">
               <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(camping.id), class: "btn btn-success" %>
             </div>
-
         </div>
       </div>
        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <div id="map" style="width: 100%; height: 600px;"></div>
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
