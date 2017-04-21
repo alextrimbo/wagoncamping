@@ -11,8 +11,8 @@ class BookingsController < ApplicationController
     @booking = @camping.bookings.new(booking_params)
     @booking.name = @camping.camping_name
     @booking.price = @camping.pricing
+    @booking.status = "Pending"
     if @booking.save
-      @booking.status = "Pending"
       redirect_to my_booking_path(@booking)
     else
       render 'new'
