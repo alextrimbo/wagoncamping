@@ -6,7 +6,8 @@ class MyCampingsController < ApplicationController
   end
 
   def index
-    @received_bookings = current_user.received_bookings
+    @received_bookings = current_user.received_bookings.undeclined
+    @bookings = current_user.my_bookings
   end
 
   def destroy

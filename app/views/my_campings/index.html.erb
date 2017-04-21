@@ -60,8 +60,17 @@
     </div>
       <% end %>
 
-    <h2>Suas proximas viagems</h2>
-      <br>
-      <br>
+
+  <div>
+    <h2>Your upcoming trips</h2>
+    <% @bookings.each do |booking| %>
+      <p><%= booking.name %></p>
+      <p><%= booking.status %></p>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+    <% end %>
+  </div>
+
+
   </div>
 </div>
