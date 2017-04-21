@@ -60,17 +60,25 @@
     </div>
       <% end %>
 
+        <h2>Your upcoming trips</h2>
 
-  <div>
-    <h2>Your upcoming trips</h2>
-    <% @bookings.each do |booking| %>
-      <p><%= booking.name %></p>
-      <p><%= booking.status %></p>
-      <p><%= booking.start_date %></p>
-      <p><%= booking.end_date %></p>
-    <% end %>
-  </div>
+        <div class="index-listing">
 
+          <% @bookings.each do |booking| %>
+            <div class="listcard">
+              <div class="listcard-photo-and-descritpion">
+                <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+                </div>
 
+                <div class="listcard-category"><%= booking.name %>
+                  <p><%= booking.status %></p>
+                  <p><%= booking.start_date %></p>
+                  <p><%= booking.end_date %></p>
+                </div>
+              </div>
+              </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
