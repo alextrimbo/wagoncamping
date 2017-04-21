@@ -2,72 +2,67 @@
   <div class="container">
 
 
-    <h1>Bemvindo no seu dashboard</h1>
-    <br>
-    <br>
-
-    <h2>Suas reservas pendentes</h2>
+    <h1>This is your dashbord</h1>
 
 
 
+    <h2>Bookings Pending</h2>
 <div class="index-listing">
+    <% @received_bookings.each do |received_booking| %>
+      <div class="col-xs-12">
+        <div class="listcard">
 
-            <% @received_bookings.each do |received_booking| %>
-              <div class="listcard">
-                <div class="listcard-photo-and-descritpion">
-                <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
+          <div class="listcard-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('camping_orange_bois.jpg');">
           </div>
 
-                  <div class="listcard-category"><%= received_booking.user_id %>
-                    <h2><%= received_booking.start_date %></h2>
-                    <h2><%= received_booking.end_date %></h2>
-                    <p> R$<%= received_booking.price %></p>
+            <div class="listcard-category"><%= received_booking.user_id %>
 
-                  </div>
-                </div>
+              <h2>Status: <%= received_booking.status %></h2>
+              <h2><%= received_booking.start_date %></h2>
+              <h2><%= received_booking.end_date %></h2>
+              <p> R$<%= received_booking.price %></p>
+            </div>
+
+        </div>
+      </div>
       <div class="listcard-btn">
         <%= link_to t(".top_call_to_action", default: "Accept"), accept_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn", method: :patch %>
         <%= link_to t(".top_call_to_action", default: "Decline"), decline_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn", method: :patch %>
       </div>
+    <% end %>
+</div>
 
-          </div>
-        <% end %>
 
-
-    <h2>Seus campings</h2>
+    <h2>Your Campings</h2>
 
 
     <div class="index-listing">
 
-            <% current_user.campings.all.each do |camping| %>
-              <div class="listcard  ">
-                <div class="listcard-photo-and-descritpion">
-                  <div class="listcard-photo" style="<%= background_image(camping.photo, "camping_logo.png") %>">
-                  </div>
+      <% current_user.campings.all.each do |camping| %>
+        <div class="listcard  ">
+          <div class="listcard-photo-and-descritpion">
+            <div class="listcard-photo" style="<%= background_image(camping.photo, "camping_logo.png") %>">
+            </div>
 
-                  <div class="listcard-category"><%= camping.camping_name %>
-                    <h2><%= camping.description %></h2>
+            <div class="listcard-category"><%= camping.camping_name %>
+              <h2><%= camping.description %></h2>
 
-                  </div>
-                </div>
-
-                  <div class="listcard-two-btn">
-                    <div class="listcard-two-edit">
-                      <%= link_to t(".top_call_to_action", default: "Edit"), edit_my_camping_path(camping.id), class: "btn btn-success", id: "listcard-two-btn" %>
-                    </div>
-                    <div class="listcard-two-btn-detele">
-                      <%= link_to t(".top_call_to_action", default: "Delete"), camping_path(camping.id), method: :delete, class: "btn btn-danger", id: "listcard-two-btn" %>
-                    </div>
-                  </div>
-
+            </div>
           </div>
-        <% end %>
 
+          <div class="listcard-two-btn">
+            <div class="listcard-two-edit">
+              <%= link_to t(".top_call_to_action", default: "Edit"), new_camping_booking_path(camping.id), class: "btn btn-success", id: "listcard-two-btn" %>
+            </div>
+            <div class="listcard-two-btn-detele">
+              <%= link_to t(".top_call_to_action", default: "Delete"), camping_path(camping.id), method: :delete, class: "btn btn-danger", id: "listcard-two-btn" %>
+            </div>
+          </div>
 
+    </div>
+      <% end %>
 
-
-    <h2>Your upcoming bookings</h2>
-
+    <h2>Your upcoming trips</h2>
 
   </div>
 </div>
