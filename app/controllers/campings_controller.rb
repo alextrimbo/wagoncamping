@@ -16,6 +16,7 @@ class CampingsController < ApplicationController
   def create
     @camping = current_user.campings.new(camping_params)
     if @camping.save
+      CampingMailer.creation_confirmation(@camping).deliver_now
       redirect_to my_campings_path
     else
       render 'new'

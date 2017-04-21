@@ -15,6 +15,8 @@ gem "gmaps4rails"
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
+gem "letter_opener", group: :development
+
 
 
 source 'https://rails-assets.org' do
