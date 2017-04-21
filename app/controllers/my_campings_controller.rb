@@ -1,4 +1,6 @@
 class MyCampingsController < ApplicationController
+  before_action :set_my_camping, only:[:show, :edit, :update, :destroy]
+
   def show
     @camping = Camping.find(params[:id])
   end
@@ -20,6 +22,10 @@ class MyCampingsController < ApplicationController
     @camping.update(camping_params)
 
     redirect_to camping_path(@camping), notice: "Updated..."
+  end
+
+  def set_my_camping
+    @my_camping = Camping.find(params[:id])
   end
 
 end
