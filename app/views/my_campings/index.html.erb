@@ -17,7 +17,7 @@
 
             <div class="listcard-category"><%= received_booking.user_id %>
 
-
+              <h2>Status: <%= received_booking.status %></h2>
               <h2><%= received_booking.start_date %></h2>
               <h2><%= received_booking.end_date %></h2>
               <p> R$<%= received_booking.price %></p>
@@ -26,8 +26,8 @@
         </div>
       </div>
       <div class="listcard-btn">
-        <%= link_to t(".top_call_to_action", default: "Accept"), accept_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn" %>
-        <%= link_to t(".top_call_to_action", default: "Decline"), decline_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn" %>
+        <%= link_to t(".top_call_to_action", default: "Accept"), accept_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn", method: :patch %>
+        <%= link_to t(".top_call_to_action", default: "Decline"), decline_received_booking_path(received_booking), class: "btn btn-success", id: "listcard-btn", method: :patch %>
       </div>
     <% end %>
 
