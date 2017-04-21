@@ -11,11 +11,14 @@ class MyCampingsController < ApplicationController
 
   end
 
-  def edit
+ def edit
+   current_user.id == @camping.user.id
   end
 
   def update
-  end
+    @camping.update(camping_params)
 
+    redirect_to camping_path(@camping), notice: "Updated..."
+  end
 
 end
