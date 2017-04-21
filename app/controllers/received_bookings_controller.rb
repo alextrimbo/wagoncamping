@@ -1,6 +1,6 @@
 class ReceivedBookingsController < ApplicationController
   def index
-    @received_bookings = current_user.received_bookings.where(status: ['Pending','Accepted'])
+    @received_bookings = current_user.received_bookings.undeclined
   end
 
   def show
