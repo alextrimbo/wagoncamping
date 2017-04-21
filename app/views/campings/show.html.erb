@@ -1,29 +1,33 @@
 <div class="wrapper">
   <div class="containter">
-    <div class="col-sm-12 col-sm-12">
-      <h1>Here are your new camping details!</h1>
+
+      <h1>Descobre o <%= @camping.camping_name %> </h1>
+
+
+
+              <div class="listcard">
+                <div class="listcard-photo-and-descritpion">
+                  <div class="listcard-photo" style="<%= background_image(@camping.photo, "camping_logo.png") %>">
+                  </div>
+
+                  <div class="listcard-category"><%= @camping.camping_name %>
+                    <h2><%= @camping.description %></h2>
+                    <h2> <%= @camping.direction %> </h2>
+                    <h2> <%= @camping.pricing %> </h2>
+                    <h2> <%= @camping.rules %> </h2>
+                  </div>
+                </div>
+                <div class="listcard-btn">
+                    <%= link_to t(".top_call_to_action", default: "BOOK IT!"), new_camping_booking_path(@camping.id), class: "btn btn-success", id: "listcard-btn" %>
+                  </div>
+
+                  </div>
 
 
 
 
-          <div class="listcard">
-            <div class="listcard-photo-and-descritpion">
 
-
-              <div class="listcard-category"><%= @camping.camping_name %>
-                <h2><%= @camping.description %></h2>
-                <h2> <%= @camping.direction %> </h2>
-                <h2> <%= @camping.pricing %> </h2>
-                <h2> <%= @camping.rules %> </h2>
-
-              </div>
-            </div>
-
-              <div class="listcard-btn">
-                <%= link_to t(".top_call_to_action", default: "Edit"), new_camping_booking_path(@camping.id), class: "btn btn-success", id: "listcard-two-btn" %>
-              </div>
-
-        </div>
+      </div>
 
   </div>
-</div>
+
